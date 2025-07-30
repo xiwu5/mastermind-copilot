@@ -2,10 +2,10 @@
 
 ## Goals
 
-Our goals for this activity are to:
+Our goals for this lesson are to:
 - Write code with Coliplot to manipulate and process data in lists, strings, and dictionaries
 - Write code to a specification while using a coding assistant
-- Continue practice reading tests
+- Continue to practice reading tests
 
 ## Mastermind Game Details
 
@@ -40,13 +40,13 @@ The goal of this project is to write code in `game.py` and `mastermind.py` so ea
 
 Throughout the development of our project, we will use a combination of unit testing and play testing to help verify the correctness of our program. Unit testing is where we test small modules of our code individually. Play testing is where we run our program and play versions of our game as we develop it in order to discover and fix any flaws or bugs.
 
-- For Waves 1-4, we will primarily use unit tests to guide development. 
-- For Wave 5, we will use play testing to guide our development. 
+- For Waves 1-3, we will primarily use unit tests to guide development. 
+- For Wave 4, we will use play testing to guide our development. 
 
-Optionally, you may find it useful to write your own unit tests to further test Waves 1-4 or your game loop in Wave 5. You may also find it helpful to do play testing of the functions you develop in Waves 1-4 by calling them in `mastermind.py`'s `mastermind` function.
+Optionally, you may find it useful to write your own unit tests to further test Waves 1-4 or your game loop in Wave 4. You may also find it helpful to do play testing of the functions you develop in Waves 1-3 by calling them in `mastermind.py`'s `mastermind` function.
 
 Before beginning the project, run the unit tests. At this point, all unit tests but one should fail. 
-- The final test in Wave 02 (`test_check_win_game_ongoing`) should pass by default as it checks your `check_win_or_lose` function returns `None`.
+- The final test in Wave 1 (`test_check_win_game_ongoing`) should pass by default as it checks your `check_win_or_lose` function returns `None`.
 
 ## Project Directions
 
@@ -54,7 +54,9 @@ Before beginning the project, run the unit tests. At this point, all unit tests 
 
 Take time to read through the Wave 1 implementation requirements and the tests for Wave 1. Write down your questions, and spend some time going through your understanding of the requirements and tests. Make sure you can run the tests and see them fail.
 
-### Wave 1: Game Setup
+### Wave 1: Game Setup, Validate Guesses, and Game End Conditions
+
+#### Implement `generate_code`
 
 The first step in setting up a new game is to generate a code of 4 colors (represented as letters) for the user to guess. To do so, implement the function `generate_code` in `game.py`. 
 
@@ -63,13 +65,9 @@ This function should have the following properties:
 - Returns a list of length 4
 - Each element in the list should be any of the following letters: R, O, Y, G, B, P
 
-### Wave 2: Validate Guesses and Game End Conditions
-
-Next, we need a way to check if a user's guess is of the correct length and only uses valid letters.
-
 #### Implement `validate_guess`
 
-To do so, implement the function called `validate_guess` in `game.py`. This function should have the following properties:
+Next, we need a way to check if a user's guess is of the correct length and only uses valid letters. To do so, implement the function called `validate_guess` in `game.py`. This function should have the following properties:
 
 - Has one parameter
     - `guess` describes some input list
@@ -115,7 +113,7 @@ Implement a function called `check_win_or_lose` in `game.py`. This function shou
 | ['R','P','Y','G'] | ['R','R','R','R'] | 9 | False |
 | ['R','O','Y','G'] | ['R','R','R','R'] | 3 | None |
 
-### Wave 3: Provide User Feedback
+### Wave 2: Provide User Feedback
 Now we need to provide feedback to the user about their guess as defined by the Mastermind game. The goal is to provide the user with two numbers:
 1. The number of pegs that are both the correct color and in the correct position
 2. The number of pegs that are the correct color but in the wrong position
@@ -180,7 +178,7 @@ The final function to implement is `check_guess` in `game.py`. This function sho
 | ['R','R','P','P'] | ['B','R','R','R'] | 1, 1 |
 | ['R','P','Y','G'] | ['O','O','O','O'] | 0, 0 |
 
-### Wave 4: Statistics
+### Wave 3: Statistics
 
 We also want to track statistics over multiple rounds and display those statistics at the end of each round. 
 
@@ -218,7 +216,7 @@ Next, implement the `format_guess_stats` function which has the following proper
 | {1: 1, 3:4, 5:1 } | ['X', '', 'XXXX', '', 'X', '','',''] | 
 | {} | ['','','','','','','',''] |
 
-### Wave 5: Game Loop
+### Wave 4: Game Loop
 
 Using the functions built in previous waves, complete the `mastermind` function. Note that there are no tests to verify the correctness of your game loop. Instead use play testing and the example outputs provided below to guide your implementation.
 
