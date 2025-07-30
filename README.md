@@ -132,7 +132,7 @@ The first function to implement is `color_count` in `game.py`. This function sho
     - `guess`, which is a string of characters representing the user's guess
     - `code`, which is a string of characters representing the code the user is attempting to guess
 - Returns an integer representing the number of pegs that are the correct color (aka letter), **regardless of whether they are in the correct position or not**
-- If no pegs are the correct color, `color_count` returns `0`
+    - If no pegs are the correct color, `color_count` returns `0`
 - A letter that appears more times in `guess` than it appears in `code` is counted the number of times it appears in `code`
 - A letter that appears fewer times in `guess` than it appears in `code` is counted the number of times it appears in `guess`
 
