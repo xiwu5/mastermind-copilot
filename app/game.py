@@ -1,34 +1,8 @@
 # Wave 1
-def generate_code():
-    pass
-
-
-def validate_guess(guess):
-    pass
-
-
-def check_win_or_lose(guess, code, num_guesses):
-    pass
-
+# Add your Wave 1 functions here
 
 # Wave 2
-def color_count(guess, code):
-    pass
-
-
-def correct_pos_and_color(guess, code):
-    pass
-
-
-def check_guess(guess, code):
-    pass
-
+# Add your Wave 2 functions here
 
 # Wave 3
-def get_win_percentage(wins, plays):
-    pass
-
-
-def format_guess_stats(guess_stats):
-    pass
-
+# Add your Wave 3 functions here
