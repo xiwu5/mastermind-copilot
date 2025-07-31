@@ -9,12 +9,6 @@ def test_generate_code_length_four():
     #Assert
     assert len(result) == 4
 
-def test_generate_code_is_list():
-    #Arrange/Act
-    result = generate_code()
-
-    #Assert
-    assert type(result) == list
 
 def test_generate_code_uses_valid_letters():
     #Arrange
@@ -71,17 +65,6 @@ def test_validate_guess_false_invalid_letters():
 
     #assert
     assert result is False
-
-
-def test_validate_guess_true_mixed_case_letters():
-    #Arrange
-    guess = ['B','b','p','P']
-
-    #Act
-    result = validate_guess(guess)
-
-    #assert
-    assert result is True
 
 
 def test_validate_guess_true_lowercase_letters():

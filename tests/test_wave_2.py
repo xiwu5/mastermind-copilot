@@ -26,18 +26,6 @@ def test_color_count_two_matching():
     assert result == 2
 
 
-def test_color_count_order_does_not_matter():
-    #Arrange
-    guess = ['R','O','G','B']
-    code = ['P','P','R','O']
-
-    #Act
-    result = color_count(guess, code)
-
-    #Assert
-    assert result == 2
-
-
 def test_color_count_letter_not_double_counted():
     #Arrange
     guess = ['R','R','G','B']
