@@ -38,6 +38,18 @@ def test_get_win_percentage_no_wins_returns_zero():
     assert result == 0
 
 
+def test_get_win_percentage_even_percentage():
+    # Arrange
+    wins = 3
+    plays = 4
+    
+    # Act
+    result = get_win_percentage(wins, plays)
+    
+    # Assert 
+    assert result == 75
+
+
 def test_get_win_percentage_rounds_down():
     # Arrange
     wins = 1
