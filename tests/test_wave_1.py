@@ -3,116 +3,116 @@ from app.game import generate_code, validate_guess, check_win_or_lose
 # --------------------------test generate_code------------------------------------
 
 def test_generate_code_length_four():
-    #Arrange/Act
+    # Arrange/Act
     result = generate_code()
 
-    #Assert
+    # Assert
     assert len(result) == 4
 
 
 def test_generate_code_uses_valid_letters():
-    #Arrange
+    # Arrange
     valid_letters = ['R', 'O', 'Y', 'G', 'B', 'P']
 
-    #Act
+    # Act
     result = generate_code()
 
-    #Assert
+    # Assert
     for letter in result:
         assert letter in valid_letters
 
 # --------------------------test validate_guess------------------------------------
 
 def test_validate_guess_false_length_greater_than_four():
-    #Arrange
+    # Arrange
     guess = ['R','R','R','R','R']
 
-    #Act
+    # Act
     result = validate_guess(guess)
 
-    #Assert
+    # Assert
     assert result is False
 
 
 def test_validate_guess_true_valid_letters_rygp():
-    #Arrange
+    # Arrange
     guess = ['R','Y','G','P']
 
-    #Act
+    # Act
     result = validate_guess(guess)
 
-    #assert
+    # Assert
     assert result is True
 
 
 def test_validate_guess_true_valid_letters_bp():
-    #Arrange
+    # Arrange
     guess = ['B','B','P','P']
 
-    #Act
+    # Act
     result = validate_guess(guess)
 
-    #assert
+    # Assert
     assert result is True
 
 
 def test_validate_guess_false_invalid_letters():
-    #Arrange
+    # Arrange
     guess = ['R','S','Y','P']
 
-    #Act
+    # Act
     result = validate_guess(guess)
 
-    #assert
+    # Assert
     assert result is False
 
 
 def test_validate_guess_true_lowercase_letters():
-    #Arrange
+    # Arrange
     guess = ['b','b','p','p']
 
-    #Act
+    # Act
     result = validate_guess(guess)
 
-    #assert
+    # Assert
     assert result is True
 
 # --------------------------test check_win_or_lose------------------------------------
 
 def test_check_win_or_lose_both_conditions_true():
-    #Arrange
+    # Arrange
     guess = ['R','B','B','P']
     code = ['R','B','B','P']
     num_guesses = 3
 
-    #Act
+    # Act
     result = check_win_or_lose(guess, code, num_guesses)
 
-    #Assert
+    # Assert
     assert result is True
 
 
 def test_check_win_or_lose_false_if_exceeds_max_guesses():
-    #Arrange
+    # Arrange
     guess = ['R','B','B','P']
     code = ['R','B','B','P']
     num_guesses = 9
 
-    #Act
+    # Act
     result = check_win_or_lose(guess, code, num_guesses)
 
-    #Assert
+    # Assert
     assert result is False
 
 
 def test_check_win_or_lose_none_if_game_ongoing():
-    #Arrange
+    # Arrange
     guess = ['R','B','B','P']
     code = ['R','B','B','O']
     num_guesses = 2
 
-    #Act
+    # Act
     result = check_win_or_lose(guess, code, num_guesses)
 
-    #Assert
+    # Assert
     assert result is None
