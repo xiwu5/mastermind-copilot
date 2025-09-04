@@ -91,7 +91,7 @@ def test_check_code_guessed_true():
     assert result
 
 
-def test_check_code_guessed_false_if_game_ongoing():
+def test_check_code_guessed_no_match_false():
     # Arrange
     guess = ['R', 'B', 'B', 'P']
     code = ['R', 'B', 'B', 'O']
