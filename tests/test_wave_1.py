@@ -1,4 +1,4 @@
-from app.game import generate_code, validate_guess, check_win_or_lose
+from app.game import generate_code, validate_guess, check_code_guessed
 
 # --------------------------test generate_code------------------------------------
 
@@ -79,40 +79,25 @@ def test_validate_guess_true_lowercase_letters():
 
 # --------------------------test check_win_or_lose------------------------------------
 
-def test_check_win_or_lose_both_conditions_true():
+def test_check_code_guessed_true():
     # Arrange
     guess = ['R','B','B','P']
     code = ['R','B','B','P']
-    num_guesses = 3
 
     # Act
-    result = check_win_or_lose(guess, code, num_guesses)
+    result = check_code_guessed(guess, code)
 
     # Assert
-    assert result is True
+    assert result
 
 
-def test_check_win_or_lose_false_if_exceeds_max_guesses():
-    # Arrange
-    guess = ['R','B','B','P']
-    code = ['R','B','B','P']
-    num_guesses = 9
-
-    # Act
-    result = check_win_or_lose(guess, code, num_guesses)
-
-    # Assert
-    assert result is False
-
-
-def test_check_win_or_lose_none_if_game_ongoing():
+def test_check_code_guessed_false_if_game_ongoing():
     # Arrange
     guess = ['R','B','B','P']
     code = ['R','B','B','O']
-    num_guesses = 2
 
     # Act
-    result = check_win_or_lose(guess, code, num_guesses)
+    result = check_code_guessed(guess, code)
 
     # Assert
-    assert result is None
+    assert not result
