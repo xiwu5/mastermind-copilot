@@ -88,7 +88,7 @@ def test_check_code_guessed_true():
     result = check_code_guessed(guess, code)
 
     # Assert
-    assert result
+    assert result is True
 
 
 def test_check_code_guessed_no_match_false():
@@ -100,4 +100,4 @@ def test_check_code_guessed_no_match_false():
     result = check_code_guessed(guess, code)
 
     # Assert
-    assert not result
+    assert result is False
