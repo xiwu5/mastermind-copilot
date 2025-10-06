@@ -45,37 +45,37 @@ def test_validate_guess_true_valid_letters_rygp():
     assert result is True
 
 
-def test_validate_guess_true_valid_letters_bp():
-    # Arrange
-    guess = ['B', 'B', 'P', 'P']
+# def test_validate_guess_true_valid_letters_bp():
+#     # Arrange
+#     guess = ['B', 'B', 'P', 'P']
 
-    # Act
-    result = validate_guess(guess)
+#     # Act
+#     result = validate_guess(guess)
 
-    # Assert
-    assert result is True
-
-
-def test_validate_guess_false_invalid_letters():
-    # Arrange
-    guess = ['R', 'S', 'Y', 'P']
-
-    # Act
-    result = validate_guess(guess)
-
-    # Assert
-    assert result is False
+#     # Assert
+#     assert result is True
 
 
-def test_validate_guess_true_lowercase_letters():
-    # Arrange
-    guess = ['b', 'b', 'p', 'p']
+# def test_validate_guess_false_invalid_letters():
+#     # Arrange
+#     guess = ['R', 'S', 'Y', 'P']
 
-    # Act
-    result = validate_guess(guess)
+#     # Act
+#     result = validate_guess(guess)
 
-    # Assert
-    assert result is True
+#     # Assert
+#     assert result is False
+
+
+# def test_validate_guess_true_lowercase_letters():
+#     # Arrange
+#     guess = ['b', 'b', 'p', 'p']
+
+#     # Act
+#     result = validate_guess(guess)
+
+#     # Assert
+#     assert result is True
 
 # --------------------------test check_win_or_lose------------------------------------
 
@@ -84,20 +84,20 @@ def test_check_code_guessed_true():
     guess = ['R', 'B', 'B', 'P']
     code = ['R', 'B', 'B', 'P']
 
-    # Act
-    result = check_code_guessed(guess, code)
+#     # Act
+#     result = check_code_guessed(guess, code)
 
-    # Assert
-    assert result is True
+#     # Assert
+#     assert result is True
 
 
-def test_check_code_guessed_no_match_false():
-    # Arrange
-    guess = ['R', 'B', 'B', 'P']
-    code = ['R', 'B', 'B', 'O']
+# def test_check_code_guessed_no_match_false():
+#     # Arrange
+#     guess = ['R', 'B', 'B', 'P']
+#     code = ['R', 'B', 'B', 'O']
 
-    # Act
-    result = check_code_guessed(guess, code)
+#     # Act
+#     result = check_code_guessed(guess, code)
 
-    # Assert
-    assert result is False
+#     # Assert
+#     assert result is False

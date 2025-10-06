@@ -1,6 +1,24 @@
 # Wave 1
-# Add your Wave 1 functions here
+import random
+# generate_code 
+# - takes no arguments  
+# - returns a list of 4 letters
+# - each letter must be one of: R, O, Y, G, B, P
+def generate_code():
+    letters = ['R', 'O', 'Y', 'G', 'B', 'P']
+    return [random.choice(letters) for _ in range(4)]
 
+def validate_guess(guess):
+    if len(guess) != 4:
+        return False
+    valid_letters = {'R', 'O', 'Y', 'G', 'B', 'P'}
+    for letter in guess:
+        if letter not in valid_letters:
+            return False
+    return True
+
+def check_code_guessed(guess, code):
+    return guess == code
 # Wave 2
 # Add your Wave 2 functions here
 
