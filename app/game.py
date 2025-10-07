@@ -1,37 +1,47 @@
-# Wave 1
 import random
-# generate_code 
-# - takes no arguments  
-# - returns a list of 4 letters
-# - each letter must be one of: R, O, Y, G, B, P
+
+
+# Wave 1
 def generate_code():
-    letters = ['R', 'O', 'Y', 'G', 'B', 'P']
-    return [random.choice(letters) for _ in range(4)]
+    valid_letters = ['R', 'O', 'Y', 'G', 'B', 'P']
+    code = []
+    
+    # Generate a code of 4 random letters from valid_letters
+    for _ in range(4):
+        code.append(random.choice(valid_letters))
+
+    return code
+
 
 def validate_guess(guess):
+    valid_letters = {'R', 'O', 'Y', 'G', 'B', 'P'}
+
+    # Exit early if guess is not exactly 4 elements long
     if len(guess) != 4:
         return False
-    valid_letters = {'R', 'O', 'Y', 'G', 'B', 'P'}
+    
+    # Convert guess to uppercase for case-insensitive comparison
+    uppercased_guess = []
     for letter in guess:
-        if not isinstance(letter, str) or letter.upper() not in valid_letters:
+        uppercased_guess.append(str(letter).upper())
+
+    # Return False if we find an invalid element of guess
+    for letter in uppercased_guess:
+        if letter not in valid_letters:
             return False
-    # All checks passed
-    is_valid = True
-    return is_valid
+        
+    return True
+
 
 def check_code_guessed(guess, code):
-    """
-    Determines if the user's guess matches the code.
-    Args:
-        guess (list): A 4-element list representing the user's guess.
-        code (list): A 4-element list representing the code to guess.
-    Returns:
-        bool: True if guess matches code, False otherwise.
-    """
-    upper_guess = [letter.upper() for letter in guess]
-    return upper_guess == code
-# Wave 2
-# Add your Wave 2 functions here
+    # Convert guess to uppercase for case-insensitive comparison
+    uppercased_guess = []
+    for letter in guess:
+        uppercased_guess.append(str(letter).upper())
 
-# Wave 3
-# Add your Wave 3 functions here
+    # Check if the guess and code are identical (win condition)
+    # The guard clause guarantees the number of guesses is 8 or less
+    if code == uppercased_guess:
+        return True
+    else: # Code has not been guessed
+        return False
