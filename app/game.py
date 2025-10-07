@@ -13,7 +13,7 @@ def validate_guess(guess):
         return False
     valid_letters = {'R', 'O', 'Y', 'G', 'B', 'P'}
     for letter in guess:
-        if letter.upper() not in valid_letters:
+        if not isinstance(letter, str) or letter.upper() not in valid_letters:
             return False
     # All checks passed
     is_valid = True
