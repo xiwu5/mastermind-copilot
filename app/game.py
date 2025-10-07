@@ -41,7 +41,4 @@ def check_code_guessed(guess, code):
 
     # Check if the guess and code are identical (win condition)
     # The guard clause guarantees the number of guesses is 8 or less
-    if code == uppercased_guess:
-        return True
-    else: # Code has not been guessed
-        return False
+    return code == uppercased_guess
