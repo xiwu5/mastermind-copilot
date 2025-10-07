@@ -2,20 +2,19 @@ import random
 
 
 # Wave 1
+VALID_LETTERS = {'R', 'O', 'Y', 'G', 'B', 'P'}
+
 def generate_code():
-    valid_letters = ['R', 'O', 'Y', 'G', 'B', 'P']
     code = []
     
-    # Generate a code of 4 random letters from valid_letters
+    # Generate a code of 4 random letters from VALID_LETTERS
     for _ in range(4):
-        code.append(random.choice(valid_letters))
+        code.append(random.choice(list(VALID_LETTERS)))
 
     return code
 
 
 def validate_guess(guess):
-    valid_letters = {'R', 'O', 'Y', 'G', 'B', 'P'}
-
     # Exit early if guess is not exactly 4 elements long
     if len(guess) != 4:
         return False
@@ -27,7 +26,7 @@ def validate_guess(guess):
 
     # Return False if we find an invalid element of guess
     for letter in uppercased_guess:
-        if letter not in valid_letters:
+        if letter not in VALID_LETTERS:
             return False
         
     return True
